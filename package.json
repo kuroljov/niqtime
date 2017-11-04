@@ -1,0 +1,37 @@
+{
+  "name": "niqtime",
+  "version": "1.0.0",
+  "description": "Fork time (HH:mm) certain times to get a sequence of unique days",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "clear && tap -R dot test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuroljov/niqtime.git"
+  },
+  "keywords": [
+    "time",
+    "date",
+    "unique",
+    "sequence"
+  ],
+  "author": "Viktor Kuroljov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kuroljov/niqtime/issues"
+  },
+  "homepage": "https://github.com/kuroljov/niqtime#readme",
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "tap": "^10.7.2"
+  },
+  "dependencies": {
+    "moment": "^2.19.1"
+  }
+}
