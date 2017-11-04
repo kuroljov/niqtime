@@ -1,3 +1,5 @@
+'use strict'
+
 const t = require('tap')
 const niqtime = require('../lib')
 const moment = require('moment')
