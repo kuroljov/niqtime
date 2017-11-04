@@ -1,5 +1,5 @@
 const t = require('tap')
-const Unique = require('../lib')
+const niqtime = require('../lib')
 const moment = require('moment')
 
 function generateExpects (fromDate, intervals, length) {
@@ -48,7 +48,7 @@ t.test('Unique', t => {
 
   tests.forEach(test => {
     const { intervals, expects, notExpects, fromDate } = test
-    const uniqueDate = new Unique(intervals, fromDate)
+    const uniqueDate = niqtime(intervals, fromDate)
 
     t.test(`${JSON.stringify(intervals)}`, t => {
       t.test(`expectation case (${expects.length} tests)`, t => {
