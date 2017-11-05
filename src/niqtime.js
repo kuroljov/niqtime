@@ -3,6 +3,9 @@
 
 const moment = require('moment')
 
+/**
+ * @type Time
+ */
 type Time = {
   hours: number,
   minutes: number
@@ -56,7 +59,11 @@ function * niqtimeIterator (intervals: Array<Time>, fromDate?: Date | moment) {
   }
 }
 
-function niqtime (intervals: Array<Time>, fromDate?: moment | Date) {
+/**
+ * @example niqtime([{ hours: 12, minutes: 0 }])
+ * @example niqtime([{ hours: 12, minutes: 0 }], moment().date(1))
+*/
+function niqtime (intervals: Array<Time>, fromDate?: moment | Date): () => moment {
   const iterator = niqtimeIterator(intervals, fromDate)
   return () => iterator.next().value
 }

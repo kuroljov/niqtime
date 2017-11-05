@@ -10,7 +10,9 @@
     "clean": "rm -rf .nyc_output coverage dist",
     "build": "clear && babel src -d dist",
     "prepack": "npm run build && npm shrinkwrap",
-    "postpack": "mv npm-shrinkwrap.json package-lock.json"
+    "postpack": "mv npm-shrinkwrap.json package-lock.json",
+    "docs:serve": "documentation serve -w src/",
+    "docs:build": "documentation build src/niqtime.js -f html -o ."
   },
   "repository": {
     "type": "git",
@@ -36,6 +38,7 @@
     "babel-eslint": "^8.0.1",
     "babel-preset-flow": "^6.23.0",
     "babel-register": "^6.26.0",
+    "documentation": "^5.3.3",
     "eslint": "^4.10.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-flowtype": "^2.39.1",
