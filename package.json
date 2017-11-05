@@ -1,6 +1,6 @@
 {
   "name": "niqtime",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fork time (HH:mm) certain times to get a sequence of unique days",
   "main": "dist/niqtime.js",
   "scripts": {
