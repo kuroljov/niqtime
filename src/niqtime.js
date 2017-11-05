@@ -1,14 +1,20 @@
+// @flow
 'use strict'
 
 const moment = require('moment')
 
-function getInitialCursor (base, intervals) {
-  const baseHours = base.hours()
-  const baseMinutes = base.minutes()
+type Time = {
+  hours: number,
+  minutes: number
+}
+
+function getInitialCursor (base: moment, intervals: Array<Time>): number {
+  const baseHours: number = base.hours()
+  const baseMinutes: number = base.minutes()
 
   let i = 0
 
-  intervals.forEach(interval => {
+  intervals.forEach((interval: Time) => {
     if (baseHours > interval.hours) {
       i++
     } else if (baseHours === interval.hours) {
@@ -21,7 +27,7 @@ function getInitialCursor (base, intervals) {
   return i
 }
 
-function * niqtimeIterator (intervals, fromDate) {
+function * niqtimeIterator (intervals: Array<Time>, fromDate?: Date | moment) {
   if (!Array.isArray(intervals) || !intervals.length) {
     return
   }
@@ -38,7 +44,7 @@ function * niqtimeIterator (intervals, fromDate) {
       base.add(1, 'days')
     }
 
-    const time = intervals[i++]
+    const time: Time = intervals[i++]
 
     yield moment({
       year: base.year(),
@@ -50,7 +56,7 @@ function * niqtimeIterator (intervals, fromDate) {
   }
 }
 
-function niqtime (intervals, fromDate) {
+function niqtime (intervals: Array<Time>, fromDate?: moment | Date) {
   const iterator = niqtimeIterator(intervals, fromDate)
   return () => iterator.next().value
 }

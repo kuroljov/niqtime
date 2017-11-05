@@ -1,11 +1,16 @@
 {
   "name": "niqtime",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Fork time (HH:mm) certain times to get a sequence of unique days",
-  "main": "lib/index.js",
+  "main": "dist/niqtime.js",
   "scripts": {
     "test": "clear && tap test",
-    "coverage": "npm t -- --coverage"
+    "cov": "npm t -- --coverage",
+    "lint": "clear && eslint .",
+    "clean": "rm -rf .nyc_output coverage dist",
+    "build": "clear && babel src -d dist",
+    "prepack": "npm run build && npm shrinkwrap",
+    "postpack": "mv npm-shrinkwrap.json package-lock.json"
   },
   "repository": {
     "type": "git",
@@ -23,16 +28,22 @@
     "url": "https://github.com/kuroljov/niqtime/issues"
   },
   "homepage": "https://github.com/kuroljov/niqtime#readme",
+  "dependencies": {
+    "moment": "^2.19.1"
+  },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-register": "^6.26.0",
     "eslint": "^4.10.0",
     "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-flowtype": "^2.39.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
+    "flow-bin": "^0.58.0",
     "tap": "^10.7.2"
-  },
-  "dependencies": {
-    "moment": "^2.19.1"
   }
 }

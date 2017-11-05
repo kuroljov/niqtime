@@ -1,0 +1,15 @@
+src/
+test/
+docs/
+coverage/
+
+.babelrc
+.eslintrc.yml
+.npmignore
+.flowconfig
+.gitignore
+*.sublime-*
+*.tgz
+.nyc_output
+*.log
+.travis.yml

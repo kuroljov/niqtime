@@ -1,7 +1,10 @@
+// @flow
 'use strict'
 
+require('babel-register')
+
 const t = require('tap')
-const niqtime = require('../lib')
+const niqtime = require('../src/niqtime')
 const moment = require('moment')
 
 t.test('Unique', t => {
