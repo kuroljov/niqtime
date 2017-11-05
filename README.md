@@ -21,3 +21,7 @@ console.log(nextDate()) // moment instance representing tomorrow, at 12:15
 console.log(nextDate()) // moment instance representing tomorrow, 19:00
 /// etc.
 ```
+
+## More docs
+
+[kuroljov.github.io/niqtime docs page](https://kuroljov.github.io/niqtime/)
